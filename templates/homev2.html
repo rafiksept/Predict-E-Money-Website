@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+Home
+
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+{% endblock%}
+
+{% block content %}
+
+
+
+<!-- particles.js container -->
+<div class='main-container'>
+
+    <div class="left-container">
+        <div class="left-content">
+            {% if predict %}
+            <h1>Hasil Prediksi</h1>
+            <p>Menurut prediksi, kamu akan mengeluarkan uang elektronik pada bulan depan sebesar {{predict}}. 
+                {% if is_big %}
+                Pengeluaran mu berada di atas rata-rata pengeluaran uang elektronik orang lain yang mengikuti survey. </p>
+                {% else %}
+                Pengeluaran mu berada di bawah rata-rata pengeluaran uang elektronik orang lain yang mengikuti survey. </p>
+                {% endif %}
+            {% else %}
+            <h1>Prediksi Pengeluaran Uang Elektronik</h1>
+            <p>Algoritma Machine Learning untuk memprediksi pengeluaran uang elektronik para remaja menggunakan Regresi Linear Berganda</p>
+            {% endif %}
+           
+        </div>
+
+    </div>
+    <div class="right-container">
+        <div class="right-content">
+            <form method = "post">
+                {% if validasi %}
+                
+                {% else %}
+                <p>Masukkan Data Salah!</p>
+                {% endif %}
+                <label for="name">Nama Samaran:</label>
+                <input type="text" name = "name" placeholder="masukkan nama!" required>
+                <label for="name">Jenis Kelamin:</label>
+                <select name="sex" required>
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+                <label for="name">Apakah anda tinggal bersama orang tua? </label>
+                <div class="home">
+                    <input type="radio"
+                       name="home"
+                       value="Yes"
+                       checked>
+                            Ya
+                    </input>
+                    
+                    <input type="radio"
+                        name="home"
+                        value="No">
+                                Tidak
+                    </input>
+
+                </div>
+                <label for="income">Uang Saku Perbulan:</label>
+                <input type="text" name = "income" placeholder="masukkan pendapatan perbulan!" required>
+                <label for="langganan">Nominal Berlangganan Aplikasi Pada Bulan Sebelumnya (Game, Netflix, dll):</label>
+                <input type="text" name = "langganan" placeholder="masukkan langganan beraplikasi!" required>
+                
+                <div class="bungkus-tombol">
+                    <button type="submit">prediksi</button>
+
+                </div>
+            
+            
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock%}

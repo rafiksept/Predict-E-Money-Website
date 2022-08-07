@@ -1,0 +1,130 @@
+* {
+    margin: 0px;
+    padding: 0px;
+ }
+
+.left-container{
+    display: flex;
+    align-items: center;
+    color: white;
+    flex: 1;
+    box-sizing: border-box;
+    padding: 65px;
+    padding-right: 100px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.left-content h1{
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.left-content p{
+    font-size: 15px;
+}
+
+.right-container{
+
+    flex: 1;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+}
+
+.right-content{
+    
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding-bottom: 5px;
+}
+
+.right-content form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+    font-size: 14px;
+    
+    
+}
+
+form input, form select{
+    margin-bottom: 20px;
+}
+
+form label{
+    margin-bottom: 7px;
+}
+
+.bungkus-tombol{
+    align-self: center;
+    
+}
+
+form button {
+    box-sizing: border-box;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    background-color: #42497b;
+    color: white;
+    border-width: thin;
+    border-color: white;
+    
+}
+
+.main-container {
+    background-color: none;
+    min-height: 500px;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    z-index: 999;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+
+}
+
+form p{
+    color: red;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media only screen and (max-width: 640px) {
+    .right-container{
+        padding-right: 30px;
+        width: 100%;
+        margin: 0;
+        box-sizing: content-box;
+        padding-left: 0;
+        
+    }
+
+    .right-content{
+        margin-left: 40px;
+    }
+
+
+    .left-container{
+        padding-left: 40px;
+        padding-right: 30px;
+    }
+
+    .main-container{
+        margin-bottom: 40px;
+    }
+
+    
+    }
+   

@@ -1,0 +1,49 @@
+{% extends 'base2.html' %}
+
+{% block title%}
+Home
+{% endblock%}
+
+{% block content %}
+<H1>Hello World!</H1>
+<form method = "post">
+    <label for="name">Nama Samaran:</label>
+    <input type="text" name = "name" placeholder="masukkan nama!" required>
+    <label for="name">Jenis Kelamin:</label>
+    <select name="sex" required>
+        <option value="Laki-Laki">Laki-Laki</option>
+        <option value="Perempuan">Perempuan</option>
+    </select>
+    <label for="name">Apakah anda tinggal bersama orang tua? </label>
+    <input type="radio"
+       name="home"
+       value="Yes"
+       checked>
+            Ya
+    </input>
+
+    <input type="radio"
+        name="home"
+        value="No">
+                Tidak
+    </input>
+    <label for="income">Uang Saku Perbulan:</label>
+    <input type="text" name = "income" placeholder="masukkan pendapatan perbulan!" required>
+    <label for="langganan">Nominal Berlangganan Aplikasi Pada Bulan Sebelumnya (Game, Netflix, dll):</label>
+    <input type="text" name = "langganan" placeholder="masukkan langganan beraplikasi!" required>
+
+    <button type="submit">submit</button>
+
+</form>
+
+
+{% if predict %}
+<h2>{{predict}}</h2>
+{% endif %}
+
+{% for data in datas %}
+<h3>Nama : {{data.name}}</h3>
+<p>Pengeluaran : {{data.pengeluaran}}</p>
+{% endfor %}
+
+{% endblock%}

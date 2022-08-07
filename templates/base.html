@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/particle.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/reset.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/base.css')}}">
+    {% block style%}{% endblock%}
+    <script src="{{url_for('static', filename='js/jquery.js')}}"></script>
+    <script>
+        $(document).ready(function(){
+        $(".preloader").fadeOut();
+        })
+    </script>
+</head>
+<body>
+    
+    <div id="particles-js">
+        
+
+    </div> 
+    <div class="nav">
+        <span><a href="{{url_for('home')}}">Home</a></span>
+        <span><a href="{{url_for('about')}}">About</a></span>
+    </div>
+    <div class="preloader">
+        <div class="loading">
+          <img src="{{url_for('static', filename='img/anya2.gif')}}" width="100px">
+          <p>Harap Tunggu...</p>
+        </div>
+      </div>
+    {% block content %}{% endblock%}
+
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-satu">
+          <h3>QUOTES</h3>
+          <p>"Apapun yang terjadi teruslah bernafas"</p>
+        </div>
+        <div class="footer-dua">
+          <h3>SOCIAL MEDIA</h3>
+          
+            <a href="https://www.instagram.com/rafiksept/?hl=id">Instagram</a>
+            <a href="https://github.com/rafiksept">Github</a>
+            <a href="https://www.linkedin.com/in/rafik-septiana-498575217?trk=public_profile_browsemap&originalSubdomain=id">linkedin</a>
+          
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright© <script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made by Rafik Septiana</p>
+  </div>
+    <!-- stats - count particles -->
+   <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
+   <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> 
+   <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+   <script src="{{url_for('static', filename='js/particle.js')}}"></script>
+   
+</body>
+</html>

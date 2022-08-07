@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+About
+
+{% endblock%}
+
+{% block style%}
+<link rel="stylesheet" href="{{url_for('static', filename="css/about.css")}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+{% endblock%}
+
+{% block content %}
+
+
+<div class="main-container">
+    <div class="left-container">
+        <h1>Tentang Projek</h1>
+        <p>Projek Prediksi Pengeluaran Uang Elektronik adalah projek akhir kelompok 7 dari mata kuliah
+            Metode Statistika Semester 2 di Universitas Airlangga. Anggota dari kelompok kami ialah Rafik Septiana, Putri Rahma Aulia Ahmad, 
+            Theresa Agnes Virnauli, dan Della Lukita Wardhani. Dalam melakukan analisis, kami menggunakan analisis Regresi Linear Berganda
+            yang lengkapnya dapat dibaca di file berikut :
+            <a href="{{url_for('static', filename='file/kelompok7_mestat.pdf')}}" id="laporan">File Laporan</a>
+
+        </p>
+    </div>
+    <div class="right-container">
+        <h1>Ringkasan</h1>
+        <div class="baris-satu ">
+            <div class="content-satu card">
+                <h3>Akurasi</h3>
+                <p> Model kami memiliki akurasi sebesar 60% yang diambil dari nilai R-Squared. Untuk Adjusted R-Squared bernilai 57.8% </p>
+            </div>
+            <div class="content-dua card">
+                <h3>Jumlah Sampel</h3>
+                <p> Sampel yang kami gunakan berjumlah 77 orang yang didapatkan dari survey internet dengan rentang umur 18-25 tahun </p>
+            </div>
+
+        </div>
+        <div class="baris-dua">
+            <div class="content-tiga card">
+                <h3>pengeluaran e-money</h3>
+                <p> Dalam survey kami, didapat bahwa rata-rata dari pengeluaran e-money remaja yaitu sebesar Rp 418.246,75 </p>
+    
+            </div>
+            <div class="content-empat card">
+                <h3>parameter</h3>
+                <p>Kami menggunakan empat parameter yaitu jenis kelamin, tempat tinggal bersama orang tua atau tidak, uang saku atau pendapatan perbulan, dan pengeluaran untuk berlangganan aplikasi seperti game atau aplikasi streaming</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
