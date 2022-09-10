@@ -6,4 +6,4 @@ http://predictemoney.herokuapp.com/
 
 ## technology
 - Frontend : CSS, HTML, JAVASCRIPT
-- Backend : Flask, Sqlite
+- Backend : Flask, Sqlite3
